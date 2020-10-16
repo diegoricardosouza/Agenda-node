@@ -20,20 +20,21 @@ export default class Contato {
 
     validate(e) {
         const el = e.target;
+        const nomeInput = el.querySelector('input[name="nome"]');
         const emailInput = el.querySelector('input[name="email"]');
-        const passwordInput = el.querySelector('input[name="password"]');
+        console.log(nomeInput.value, emailInput.value);
         let error = false;
+        
+        if (nomeInput.value === '') {
+            alert('Campo nome de preechimento obrigatório');
+            error = true;
+        }
 
         if(!validator.isEmail(emailInput.value)) {
             alert('E-mail inválido');
             error = true;
         }
 
-        if(passwordInput.value.length < 3 || passwordInput.value.length > 50) {
-            alert('Senha precisa ter entre 3 a 50 caracteres');
-            error = true;
-        }
-
-        if(!error) el.submit();
+        if(!error) el.submit(); 
     }
 }

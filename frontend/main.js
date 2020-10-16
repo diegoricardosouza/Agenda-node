@@ -9,4 +9,9 @@ const cadastro = new Login('.form-cadastro');
 login.init();
 cadastro.init();
 
+const contatoRegister = new Contato('.form-contato-register');
+const contatoEdit = new Contato('.form-contato-edit');
+contatoRegister.init();
+contatoEdit.init();
+
 //import './assets/css/style.css';
